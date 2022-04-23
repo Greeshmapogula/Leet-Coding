@@ -1,0 +1,10 @@
+class Solution:
+    def generate(self, n: int) -> List[List[int]]:
+        l=[[1]]
+        for i in range(n-1):
+            temp = [0] + l[-1] + [0]
+            r = []
+            for j in range(len(l[-1])+1):
+                r.append(temp[j]+temp[j+1])
+            l.append(r)    
+        return(l)
